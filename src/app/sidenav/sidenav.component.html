@@ -1,0 +1,99 @@
+<div class="sidebar">
+    <!-- <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">CodingLab</div>
+        <i class='bx bx-menu' id="btn"></i>
+    </div> -->
+    <div class="profilespace">
+        <img src="../../assets/profile.png" alt="">
+        <p>{{username}}</p>
+    </div>
+    <ul class="nav-list">
+
+        <li>
+            <a [class.selected]="isPageSelected('Home')">
+                <i class='bx bx-home' (click)="onPageChange('Home')"></i>
+                <span class="links_name">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
+        </li>
+        <li>
+            <a [class.selected]="isPageSelected('Dashboard')">
+                <i class='bx bx-grid-alt' (click)="onPageChange('Dashboard')"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a [class.selected]="isPageSelected('Reports')">
+                <i class='bx bx-detail' (click)="onPageChange('Reports')"></i>
+                <span class="links_name">Reports</span>
+            </a>
+            <span class="tooltip">Reports</span>
+        </li>
+        <li>
+            <a [class.selected]="isPageSelected('Analytics')">
+                <i class='bx bx-pie-chart-alt-2' (click)="onPageChange('Analytics')"></i>
+                <span class="links_name">Analytics</span>
+            </a>
+            <span class="tooltip">Analytics</span>
+        </li>
+        <!-- <li>
+            <a href="#">
+                <i class='bx bx-folder'></i>
+                <span class="links_name">File Manager</span>
+            </a>
+            <span class="tooltip">Files</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cart-alt'></i>
+                <span class="links_name">Order</span>
+            </a>
+            <span class="tooltip">Order</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-heart'></i>
+                <span class="links_name">Saved</span>
+            </a>
+            <span class="tooltip">Saved</span>
+        </li> -->
+        <li>
+            <a [class.selected]="isPageSelected('user')">
+                <i class='bx bx-user' (click)="onPageChange('user')"></i>
+                <span class="links_name">User Management</span>
+            </a>
+            <span class="tooltip">User Management</span>
+        </li>
+        <li>
+            <a [class.selected]="isPageSelected('Setting')">
+                <i class='bx bx-cog' (click)="onPageChange('Setting')"></i>
+                <span class="links_name">Setting</span>
+            </a>
+            <span class="tooltip">Setting</span>
+        </li>
+        <li>
+            <a [class.selected]="isPageSelected('logout')">
+                <i class='bx bx-exit' (click)="onPageChange('logout')"></i>
+                <span class="links_name">Log Out</span>
+            </a>
+            <span class="tooltip">Log Out</span>
+        </li>
+        <!-- <li class="profile">
+            <div class="profile-details">
+                <img src="profile.jpg" alt="profileImg">
+                <div class="name_job">
+                    <div class="name">Prem Shahi</div>
+                    <div class="job">Web designer</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out"></i>
+        </li> -->
+    </ul>
+    <div class="themee">
+        <div class="dark" (click)="toggleTheme('dark')"></div>
+        <div class="light" (click)="toggleTheme('light')"></div>
+        <div class="blue" (click)="toggleTheme('blue')"></div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-body">
+        <!-- <h4 class="card-title mb-4">Latest Transaction</h4> -->
+        <div class="table-responsive">
+            <div class="divider">
+                <h3>Sensor Health</h3>
+                <div class="formats">
+                    <p style="margin-top: 8px; font-weight: 400; font-size: 12px;">12 hrs</p>
+                    <label class="switch" (change)="tapped()">
+                        <input type="checkbox" [checked]="is48format">
+                        <span class="slider round"></span>
+                    </label>
+                    <p style="margin-top: 8px; font-weight: 400; font-size: 12px;">24 hrs</p>
+                </div>
+
+            </div>
+
+            <table class="table table-hover align-middle mb-0">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Parameters</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col" colspan="2">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of sensorStatus">
+                        <td>
+                            <div class="imgg">
+                                <img src="../../assets/{{data.file.toLowerCase()}}.png" alt="">
+                                <p>{{data.name}}</p>
+                            </div>
+                        </td>
+                        <td>{{data.date}}</td>
+                        <td>{{data.time}}</td>
+                        <td>
+                            <div class="status"
+                                [ngClass]="{'status-green': data.status.trim() === 'Recieved', 'status-red': data.status.trim() === 'Progress'}">
+                                <!-- Conditional signal color -->
+                                <div *ngIf="data.status.trim() === 'Progress'" class="signal-loading">
+                                    <div class="signal blink-signal"></div>
+                                    <div class="signal blink-signal blink2"></div>
+                                    <div class="signal blink-signal blink3"></div>
+                                </div>
+                                <div *ngIf="data.status.trim() === 'Recieved'" class="static-signal">
+                                    <!-- Three green dots for 'Recieved' -->
+                                    <div class="signal signal-green"></div>
+                                    <div class="signal signal-green"></div>
+                                    <div class="signal signal-green"></div>
+                                </div>
+                                <!-- <span class="badge">{{data.status}}</span> -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- End Cardbody -->
+</div>

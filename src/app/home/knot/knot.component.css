@@ -1,0 +1,49 @@
+.envelope {
+    background: #0f0f0f;
+    position: relative;
+    box-shadow: inset 0 0 5px 5px #000;
+    border-radius: 50%;
+  }
+  
+  .speedNobe {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    transition: all 1s;
+  }
+  
+  .speedPosition {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    background: #191919;
+    box-shadow: 0 0 3px 3px black;
+  }
+  
+  .nob, .numb {
+    transition: opacity 1s;
+    position: absolute;
+    opacity: 0.5;
+  }
+  
+  .nob.bright, .numb.bright {
+    opacity: 1;
+  }
+  
+  .nob.danger, .numb.danger {
+    background: #ff113a;
+    box-shadow: 0 0 2px 1px #ff113a;
+  }
+  
+  .speedNobe div {
+    background: #48a3cb;
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+  

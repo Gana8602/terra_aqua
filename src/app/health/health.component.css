@@ -1,0 +1,253 @@
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    margin-top: 10px;
+    color: var(--main-text);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color:  var(--background-color);
+}
+.card{
+    height: 100%;
+    border-radius: 10px;
+    background-color:  var(--background-color);
+}
+.card-body{
+    background-color:  var(--background-color);
+    border-radius: 12px;
+}
+
+thead th {
+    font-weight: bold;
+    padding: 20px;
+    background-color:  var(--background-color);
+    color:  var(--main-text);
+    border: none;
+}
+
+tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    background-color:  var(--background-color);
+    color:  var(--main-text);
+    border: none;
+    
+}
+
+.imgg {
+    display: flex;
+    align-items: center;
+}
+
+.imgg img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 5px;
+}
+h3{
+    margin: 10px;
+}
+.imgg p {
+    margin: 0;
+    padding-left: 15px;
+}
+
+td {
+    text-align: left;
+}
+
+.status-green, .status-red {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 25px;
+    border-radius: 12px;
+    font-size: 13px;
+    width: 50px;
+    padding-left: 5px;
+}
+
+.status-green {
+    background-color: rgba(69, 99, 69, 0.568);
+}
+
+.status-red {
+    background-color: rgba(246, 230, 160, 0.235);
+}
+
+.signal-green {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #a6f391, inset 0 0 8px #a6f391;
+    animation: pulse2 2s linear infinite;
+    background-color: green;
+}
+
+.signal-red {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgba(238, 221, 143, 0.824);
+    box-shadow: 0 0 8px #eee16a, inset 0 0 8px #eee16a;
+    animation: pulse1 2s linear infinite;
+}
+
+@keyframes pulse1 {
+    0% { box-shadow: 0 0 8px #eee16a, inset 0 0 8px #eee16a; }
+    50% { box-shadow: 0 0 16px #eee16a, inset 0 0 14px #eee16a; }
+    100% { box-shadow: 0 0 8px #eee16a, inset 0 0 8px #eee16a; }
+}
+
+@keyframes pulse2 {
+    0% { box-shadow: 0 0 8px #a6f391, inset 0 0 8px #a6f391; }
+    50% { box-shadow: 0 0 16px #a6f391, inset 0 0 14px #a6f391; }
+    100% { box-shadow: 0 0 8px #a6f391, inset 0 0 8px #a6f391; }
+}
+
+.signal-loading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.blink-signal {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: gray; 
+    box-shadow: 0 0 8px #f3f168, inset 0 0 8px #f3f168;
+    animation: blink 1.5s infinite;
+}
+.static-signal{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+.static-signal .signal{
+    /* display: flex;
+    flex-direction: row; */
+    margin-right: 3px;
+}
+.blink2 {
+    animation-delay: 0.3s; 
+}
+
+.blink3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+        box-shadow: 0 0 8px #f3f168, inset 0 0 8px #f3f168;
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 16px #f3f168, inset 0 0 16px #f3f168;
+    }
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-green {
+    background-color: green;
+}
+
+.badge-red {
+    background-color: rgb(255, 217, 0);
+}
+/* For switch */
+.divider{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.formats{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+/* The switch - the box around the slider */
+.switch {
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: aqua;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px aqua;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 24px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

@@ -1,0 +1,150 @@
+<div class="users">
+    <div class="user-main">
+        <!-- <h4>User Management</h4> -->
+        <div class="sections">
+            <div class="list-users">
+                <!-- <button>Add User</button> -->
+                <h4>Users</h4>
+                <div class="user-list">
+                    <!-- Loop through users -->
+                    <div class="index-list" *ngFor="let user of users">
+                        <div class="name-image">
+                            <img src="../../assets/profile.png" alt="Profile Picture">
+                            <div class="texts">
+                                <h3>{{ user['username'] }}</h3>
+                                <h6>{{ user['role'] }}</h6>
+                                <h5>{{ user['designation'] }}</h5>
+                            </div>
+                        </div>
+                        <i class="bx bx-edit" (click)="preEdit(user)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="edit-users">
+
+                @if (state === "Add") {
+                <h4>Add User</h4>
+                }@else if(state === "Edit"){
+                <h4>Edit User</h4>
+                }
+                <div class="user-edit">
+                    <p>Name</p>
+                    <input type="text" required placeholder="Name" [(ngModel)]="name">
+                    <p>Username</p>
+                    <input type="text" required placeholder="Username" [(ngModel)]="username">
+                    <p>Role</p>
+                    <select [(ngModel)]="selectedRole">
+                        <option value="">--Please choose an option--</option>
+                        <!-- @for (item of Roles; track $index) { -->
+                        <option *ngFor="let role of Roles" [value]="role.role">{{role.role}}</option>
+                        <!-- } -->
+
+                    </select>
+                    <p>Position</p>
+                    <select [(ngModel)]="selectedDesignation">
+                        <option value="">--Please choose an option--</option>
+
+                        <option *ngFor="let desig of Designation" [value]="desig.designation">{{desig.designation}}
+                        </option>
+
+
+                    </select>
+                    <p>E-mail</p>
+                    <input type="email" required placeholder="E-mail id" [(ngModel)]="email">
+                    <p>Password</p>
+                    <input type="password" required placeholder="Password" [(ngModel)]="password">
+
+
+                </div>
+                <div class="but">
+                    @if (state === "Add") {
+                    <button (click)="naaavigate()"> Add</button>
+                    }@else if(state === "Edit"){
+
+                    <button (click)="naaavigate()"> Edit</button>
+                    }
+
+                </div>
+
+
+
+            </div>
+            <div class="datas">
+                <div class="role">
+                    <h4>Roles</h4>
+                    <div class="fii">
+                        <input type="text" placeholder="Enter new role" [(ngModel)]="roleentered">
+                        <button (click)="addRole()">Create</button>
+                    </div>
+                    <div class="tablee">
+                        <div class="table-header">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table>
+                                <tbody>
+                                    <tr *ngFor="let role of Roles; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{role.role}}</td>
+                                        <td>
+                                            <!-- <i class="bx bx-edit"></i> -->
+                                            <i (click)="DeleteRole(role.id)" class="bx bx-trash"></i>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="position">
+                    <h4>Designation</h4>
+                    <div class="fii">
+                        <input type="text" placeholder="Enter new Designation" [(ngModel)]="selectedDesignation">
+                        <button (click)="addDesignation()">Create</button>
+                    </div>
+                    <div class="tablee">
+                        <div class="table-header">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Designation</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table>
+                                <tbody>
+                                    <tr *ngFor="let desig of Designation; let i=index;">
+                                        <td>{{i+1}}</td>
+                                        <td>{{desig.designation}}</td>
+                                        <td>
+                                            <!-- <i class="bx bx-edit"></i> -->
+                                            <i (click)="DeleteDesignation(desig.id)" class="bx bx-trash"></i>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

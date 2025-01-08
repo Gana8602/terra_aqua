@@ -1,0 +1,145 @@
+.bbody {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../../assets/13.png') no-repeat center center fixed; 
+  background-size: cover;
+  margin: 0;
+  opacity: 0; /* Start invisible for animation */
+  transform: scale(0.9); /* Slightly smaller initially */
+  animation: fadeInScale 1s ease-in-out forwards; /* Trigger animation */
+
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+/*Navbar*/
+.navbar {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  height: 10px;
+  width: auto;
+  max-width: 100%;
+}
+h3{
+  font-size: 22px !important;
+  font-weight: bold !important;
+  padding-bottom: 2%;
+}
+.login-card {
+  width: 500px;
+  height: 500px;
+  padding: 85px;
+  border-radius: 50%;
+  border: 2px solid #00FFFF; /*Border Color*/
+  transition: border-color 0.3s ease-in-out; /*Border Transition*/
+  backdrop-filter: blur(10px);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(31, 31, 31, 0.6);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  opacity: 0; /* Start invisible for animation */
+  transform: scale(0.9); /* Slightly smaller initially */
+  animation: fadeInScale 1s ease-in-out forwards; /* Trigger animation */
+}
+
+ /* Fade-in and scale-up animation */
+ @keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h3 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Styling for the first letter */
+.styled-letter {
+  color: whiteF;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-right: 2px;
+}
+
+
+
+.form-control {
+  border-radius: 30px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 2px solid;
+  border-color: #00FFFF;
+}
+
+.btn-login {
+  width: auto;
+  border-radius: 30px;
+  padding: 10px;
+  padding: 10px 70px;
+  background-color: #1e1e1e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: background 0.2s;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-login:hover {
+  background-color: #00FFFF;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-me input {
+  margin-right: 10px;
+}
+
+/* Custom Ckeckbox */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 2px solid #1e1e1e;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox:checked {
+  background-color: #00FFFF;
+}
+
+.custom-checkbox:checked::after {
+  content: '\2714';
+  font-size: 14px;
+  color: #1e1e1e;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}

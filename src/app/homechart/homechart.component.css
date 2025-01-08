@@ -1,0 +1,10 @@
+canvasjs-chart-canvas{
+    border-radius: 15px;
+}
+.map{
+    background-color: unset;
+    border-radius: 15px;
+    margin: 0px;
+    height: 48%;
+    padding-top: 10px;
+}

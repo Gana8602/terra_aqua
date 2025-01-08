@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="selector">
+        <div class="selector-item">
+            <input type="radio" id="radio-unit1" name="selector" class="selector-item_radio" [(ngModel)]="selectedUnit"
+                [value]="unit1" (change)="onUnitChange()" checked />
+            <label for="radio-unit1" class="selector-item_label">{{ unit1 }}</label>
+        </div>
+        <div class="selector-item">
+            <input type="radio" id="radio-unit2" name="selector" class="selector-item_radio" [(ngModel)]="selectedUnit"
+                [value]="unit2" (change)="onUnitChange()" />
+            <label for="radio-unit2" class="selector-item_label">{{ unit2 }}</label>
+        </div>
+    </div>
+</div>

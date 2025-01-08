@@ -1,0 +1,27 @@
+<div class="bbody">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/logo.png" alt="Logo" class="" width="100" height="100" />
+        </a>
+    </nav>
+
+    <div class="login-card">
+        <div class="login-header">
+            <h3>Login</h3>
+            <h6 class="text-light">
+                <span class="styled-letter">TERRA AQUA</span>
+            </h6>
+        </div>
+        <form (ngSubmit)="login($event)">
+            <input type="text" class="form-control" placeholder="Username" required [(ngModel)]="userName"
+                name="userName">
+            <input type="password" class="form-control" placeholder="Password" required [(ngModel)]="password"
+                name="password">
+            <div class="text-light remember-me">
+                <input type="checkbox" id="rememberMe" class="custom-checkbox me-2" aria-label="Remember me">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-login">Submit</button>
+        </form>
+    </div>
+</div>

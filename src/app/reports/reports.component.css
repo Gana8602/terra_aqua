@@ -1,0 +1,616 @@
+.reports-container{
+  margin: 0;
+    padding-left: 98px;
+    display: flex; /* Flexbox for layout */
+    flex-direction: row; 
+    /* background-color: blue; */
+}
+
+/* Flex 1 */
+.filterContainer{
+/* flex: 1.8;  */
+background-color: var(--background-color);
+border-radius: 20px;
+/* margin: 0 2px; */
+padding: 20px;
+position: sticky; 
+width: 22%;
+top: 0; 
+min-height: 100vh;
+height: 100%;
+overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .filterContainer {
+    min-height: 22%;
+    height: auto; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .filterContainer {
+    min-width: 30%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .filterContainer {
+    min-width: 45%;/* Full width on mobile */
+    height: auto; /* Adjust height to content */
+  }
+}
+
+.filterContainer h5{
+  color: var(--main-text);
+  padding-bottom: 30px;
+}
+ .stationsselect{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.CWPRS01, .CWPRS02{
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s color 0.3s;
+}
+svg{
+  height: 40px;
+  width: 40px;  
+}
+.stationsselect h1{
+  color: rgba(255, 255, 255, 0.775);
+  /* font-size: 16px; */
+  /* font-weight: 500; */
+}  
+.selectOption{
+  background-color: rgb(73, 104, 104);
+}
+
+
+/* filter tide , filter ADCP */
+.stations{
+  padding-top: 10%;
+   /* padding: 30px 20px 0px 20px;  */
+  /*height: 100px;
+  width: 100%; */
+  color: var(--main-text);
+  display: flex;
+  flex-direction: column;
+
+}
+.stations h3{
+  /* font-size: 22px; */
+  /* font-weight: 400; */
+}
+
+
+/* Stations Field */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 10px; */
+}
+
+.field label {
+  margin-bottom: 2%;
+  /* font-size: 18px; */
+  color: var(--main-text);
+  padding-top: 6%;
+}
+
+::ng-deep .dateDrop .p-dropdown {
+  height: 30px;
+  width: 100%;
+  /* margin-left: 10px; */
+  /* margin-top: 5px; */
+  margin-bottom: 5%;
+  /* font-size: 15px; */
+  /* font-weight: bold; */
+  align-items: center;
+  color: var(--drop-text);
+  border-width: 2px;
+  /* border-color: rgba(64, 62, 62, 0.678); */
+  border-radius: 10px;
+  background-color: rgba(103, 100, 100, 0.678);
+}
+
+/* Additional targeting for dropdown icon and inner elements */
+::ng-deep .dateDrop .p-dropdown-label {
+  color: var(--drop-text);
+  padding-left: 10px;
+}
+
+::ng-deep .dateDrop .p-dropdown-panel {
+  border-width: 2px;
+  border-color: rgba(64, 62, 62, 0.678);
+  border-radius: 10px;
+}
+
+::ng-deep .dateDrop .p-dropdown-item {
+  font-size: 15px;
+  color: var(--drop-text);
+  font-weight: bold;
+  padding: 8px 10px;
+  background-color: rgba(103, 100, 100, 0.678); /* Option background */
+}
+
+/* Hover effect for dropdown items */
+::ng-deep .dateDrop .p-dropdown-item:hover {
+  background-color: #fff; /* Highlighted option background */
+  color: black;
+}
+
+::ng-deep .dateDrop .p-dropdown-trigger {
+  color: white;
+}
+
+
+/* ::ng-deep .dateDrop .p-dropdown-trigger .pi {
+  color: white;
+} */
+
+
+.full-width{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 4%;
+}
+
+.full-width label{
+  margin-bottom: 2%;
+  /* font-size: 18px; */
+  color: var(--main-text);
+  padding-top: 5%;
+}
+
+/* ::ng-deep .p-calendar .full-width{
+  border-radius: 7px;
+  background-color: rgba(170, 20, 20, 0.678) !important;
+} */
+
+::ng-deep .p-datepicker table td > span {
+  height: 25px;
+  width: 20px;
+  transition: box-shadow 0.2s;
+}
+
+::ng-deep .custom-calendar .p-inputtext  {
+  height: 30px;
+  width: 100%;
+  background-color:  rgba(103, 100, 100, 0.678); /* Adjust the color as needed */
+  border-radius: 10px;
+  color: #fff !important;
+  border: none;
+}
+
+::ng-deep .custom-calendar .p-inputtext:focus {
+  outline: none;
+  border-color: white;
+}
+
+::ng-deep .custom-calendar .p-datepicker-monthpicker .p-monthpicker-month {
+  width: 50px; 
+  height: 40px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Flex-2 */
+.tableContainer {  
+  /* flex: 8.2; */
+  width: 100%;
+  max-width: 98%;
+  /* height: auto;  */
+  overflow-y: auto; 
+  background-color:var(--background-color); /* Light grey background */
+  color: var(--main-text);
+  border-radius: 20px;
+  margin: 0px 10px 0px 10px;
+  padding: 20px;
+} 
+
+@media (max-width: 1200px) {
+  .tableContainer {
+    width: 100%; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .tableContainer {
+    width: 100%;
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    min-width: 600px;
+  }
+}
+
+ label {
+  margin-bottom: 10px;
+  /* font-size: 28px;     */
+  /* color: white; */
+}
+/* .p-paginator-current .ng-star-inserted{
+  color: var(--main-text);
+} */
+
+
+/* Table */
+
+/* Apply background color for the whole table */
+::ng-deep .p-datatable {
+color: #fff !important;
+}
+
+::ng-deep .p-datatable-header {
+background-color: var(--table) !important;
+color: #fff !important;
+/* border-color: #1ee1ff; */
+box-shadow: var(--box-shadow);
+border-radius: 20px;
+padding: 20px 20px 10px 20px;
+margin: 30px 0px 30px 0px ;
+}
+
+/* Caption Styling */
+.caption {
+display: flex;
+/* flex-wrap: wrap; */
+justify-content: space-between;
+color: #fff;
+gap: 10;
+}
+
+/* Search */
+input[type=search] {
+-webkit-appearance: textfield;
+-webkit-box-sizing: content-box;
+font-family: inherit;
+font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+display: none; 
+}
+input[type=search] {
+background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+border: solid 1px #ccc;
+padding: 9px 10px 9px 32px;
+width: 55px;
+
+-webkit-border-radius: 10em;
+-moz-border-radius: 10em;
+border-radius: 10em;
+
+-webkit-transition: all .5s;
+-moz-transition: all .5s;
+transition: all .5s;
+}
+
+#search input[type=search] {
+width: 15px;
+padding-left: 10px;
+color: transparent;
+cursor: pointer;
+}
+#search input[type=search]:hover {
+background-color: #fff;
+}
+#search input[type=search]:focus {
+width: 100%;
+padding-left: 32px;
+color: #000;
+background-color: #fff;
+cursor: auto;
+border: solid 1px #1e1e1e !important;
+outline: none;
+box-shadow: none;
+}
+
+#search input:-moz-placeholder {
+color: transparent;
+}
+#search input::-webkit-input-placeholder {
+color: transparent;
+}
+
+::ng-deep .highlight {
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+
+/* Button Styling */
+/* ::ng-deep .p-button {
+background-color: #ededed !important;
+color: #000 !important; 
+}
+
+::ng-deep .p-button:hover {
+background-color: #fff !important;
+} */
+
+
+/* Apply styles to PrimeNG table components using ::ng-deep */
+::ng-deep .p-datatable-thead th {
+background-color: var(--table) !important; /* Black header background */
+color: var(--main-text) !important; /* White text */
+border-bottom: 2px solid #1ee1ff;
+/* border-top: 2px solid black; */
+/* text-align: center; */
+padding: 20px 15px;
+/* width: 17% !important; */
+align-content: center;
+}
+
+/* Apply border-radius to the first column */
+::ng-deep .p-datatable-thead th:first-child {
+  border-top-left-radius: 20px;
+  /* border-left: 2px solid black; */
+}
+
+/* Apply border-radius to the last column */
+::ng-deep .p-datatable-thead th:last-child {
+  border-top-right-radius: 20px;
+  /* border-right: 2px solid black; */
+}
+
+::ng-deep .p-datatable-tbody td {
+background-color: var(--table) !important; /* Black background for rows */
+/* box-shadow: var(--box-shadow); */
+color: var(--main-text) !important; /* White text */
+border-bottom: none; /* Light grey border for table rows */
+text-align: center;
+padding: 20px 0px;
+min-width: 100px;
+}
+
+/* Styling Specific Data Values */
+.nan {
+/* font-weight: 700; */
+color: #ff5252; /* Red for invalid values */
+}
+
+.low {
+/* font-weight: 700; */
+color: #ffa726; /* Orange for low values */
+}
+
+.ok {
+/* font-weight: 700; */
+color: #66bb6a; /* Green for OK values */
+}
+
+
+
+/* More specific targeting for the datatable footer */
+/* ::ng-deep .p-datatable .p-datatable-footer {
+background-color: #000 !important; 
+color: #fff !important; 
+} */
+
+
+/* Row hover effect */
+/* ::ng-deep .p-datatable-tbody tr:hover {
+background-color: #e90b0b !important;
+} */
+
+
+/* Paginator Styling */
+::ng-deep .p-paginator {
+background-color: var(--table) !important; /* Black background for paginator */
+color: var(--main-text) !important; 
+border-color: #1ee1ff;
+box-shadow: var(--box-shadow2);
+border-radius: 0px 0px 20px 20px;
+padding: 30px 20px 40px 20px;
+/* margin: 0px 0px 30px 0px ; */
+}
+::ng-deep .p-paginator-rpp-options{
+  align-items: center;
+}
+/* Pagination Buttons */
+::ng-deep .p-paginator .p-paginator-first, 
+::ng-deep .p-paginator .p-paginator-prev, 
+::ng-deep .p-paginator .p-paginator-next, 
+::ng-deep .p-paginator .p-paginator-last {
+background-color: rgba(103, 100, 100, 0.678) !important; /* Button background */
+color: #fff !important; /* White text */
+margin: 2px;
+border-radius: 10px;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  color: var(--main-text) !important; /* Grey color for page numbers */
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 10px;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background-color: var(--main-text) !important; /* Darker background on hover */
+  color: var(--wholebg) !important; /* White text on hover */
+  border-radius: 10px;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-highlight {
+background-color: var(--main-text) !important; 
+color: var(--wholebg) !important;
+border-radius: 10px;
+}
+
+::ng-deep .p-paginator .p-paginator-current {
+  color: var(--main-text) !important; /* Grey color for current page report text */
+}
+
+
+
+
+/* Table */
+
+
+
+/*Common CSS  */
+/* button */
+.headerFilter{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-evenly;
+}
+.submit{
+  height: 40px;
+  width: 100%;
+  max-width: 130px;
+  border-radius: 15px;
+  background-color: rgb(0, 255, 255);
+  color: rgb(0, 0, 0);
+  margin: auto;
+  margin-top: 8%;
+}
+
+::ng-deep .export .p-dropdown {
+  height: 40px;
+  width: 100%;
+  /* margin-left: 10px; */
+  margin-top: 5px;
+  margin-bottom: 20px;
+  /* font-size: 15px; */
+  /* font-weight: bold; */
+  align-items: center;
+  color: var(--drop-text);
+  border-width: 2px;
+  /* border-color: rgba(64, 62, 62, 0.678); */
+  border-radius: 10px;
+  background-color: rgba(103, 100, 100, 0.678);
+}
+
+/* Additional targeting for dropdown icon and inner elements */
+::ng-deep .export .p-dropdown-label {
+  color: var(--drop-text);
+  padding-left: 10px;
+}
+
+::ng-deep .export .p-dropdown-panel {
+  border-width: 2px;
+  border-color: rgba(64, 62, 62, 0.678);
+  border-radius: 10px;
+}
+
+::ng-deep .export .p-dropdown-item {
+  font-size: 15px;
+  color: var(--drop-text);
+  font-weight: bold;
+  padding: 8px 10px;
+  background-color: rgba(103, 100, 100, 0.678); /* Option background */
+}
+
+/* Hover effect for dropdown items */
+::ng-deep .export .p-dropdown-item:hover {
+  background-color: #fff; /* Highlighted option background */
+  color: black;
+}
+
+::ng-deep .export .p-dropdown-trigger {
+  color: white;
+}
+
+/*for multi drop */
+/* Main multi-select input field */
+::ng-deep .multidrop .p-multiselect {
+  height: 40px;
+  margin-right: 10px;
+  width: 120%;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--drop-text);
+  border-width: 2px;
+  border-color: rgba(62, 64, 62, 0.678);
+  border-radius: 10px;
+  background-color: rgba(102, 100, 103, 0.678);
+}
+
+/* Chip display for selected items */
+::ng-deep .multidrop .p-multiselect-label-container .p-multiselect-label {
+  color:var(--drop-text);
+  padding-left: 10px;
+}
+
+/* Dropdown panel (the menu that shows options) */
+::ng-deep .multidrop .p-multiselect-panel {
+  background-color: rgba(103, 100, 100, 0.678);
+  border-width: 2px;
+  border-color: rgba(64, 62, 62, 0.678);
+  border-radius: 10px;
+}
+
+/* Dropdown item (individual options) */
+::ng-deep .multidrop .p-multiselect-item {
+  font-size: 15px;
+  color: var(--drop-text);
+  font-weight: bold;
+  padding: 8px 10px;
+  background-color: rgba(103, 100, 100, 0.678); /* Option background */
+}
+
+/* Hover effect for dropdown items */
+::ng-deep .multidrop .p-multiselect-item:hover {
+  background-color: #fff; /* Highlighted option background */
+  color: black;
+}
+
+/* Styling for the chip display when items are selected */
+::ng-deep .multidrop .p-multiselect .p-multiselect-token {
+  background-color: rgba(103, 100, 100, 0.678);
+  color: var(--drop-text);
+  font-weight: bold;
+  margin: 3px;
+}
+.contttt{
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+
+
+

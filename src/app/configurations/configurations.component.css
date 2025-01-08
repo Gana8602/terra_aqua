@@ -1,0 +1,611 @@
+.config{
+    height: 100vh;
+    flex: 1;
+    margin: 0;
+    padding-left: 7%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+}
+.stationSetting{
+    width: 50%;
+    height: 100%;
+    background-color:   var(--background-color);
+    margin: 5px;
+    border-radius: 15px;
+    display: flex;
+    /* padding-top: 20px; */
+    flex-direction: column;
+    /* align-items: flex-end; */
+    overflow: hidden;
+
+}
+.map-container {
+    flex: 1;
+    /* padding-bottom: 40px; */
+    width: 100%;
+    border-radius: 15px;
+    height: 100%;
+}
+.openlayers-map{
+    flex: 1;
+    /* padding-bottom: 40px; */
+    width: 100%;
+    border-radius: 15px;
+    height: 100%;
+}
+.dd{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: aqua; */
+}
+.ddfff-input{
+    height: 30px !important;
+    width: 80px !important;
+}
+.lat{
+    display: flex;
+    width: 70%;
+    /* background-color: green; */
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.inlat{
+    display: flex;
+    flex-direction: row;
+}
+.location{
+    width: 100%;
+    height: 150px;
+    padding-bottom: -30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: start;
+    /* background-color: aqua; */
+}
+.field{
+    display: flex;
+    flex-direction: row;
+}
+.cc{
+    height: 15px;
+    width: 47%;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.cc input[type="checkbox"]{
+    height: 15px;
+    width: 15px;
+   
+    margin: 0px;
+}
+.fencing{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    /* background-color: aqua; */
+}
+.fff p{
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--main-text);
+}
+.stationtype-name{
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+}
+.fields{
+
+    padding: 20px;
+    height: 61%;
+    width: 75%;
+    
+
+    
+}
+
+.legend-box {
+    position: absolute;
+    top: 10px;  /* Distance from the top of the map */
+    right: 10px; /* Distance from the right of the map */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between the two boxes */
+    z-index: 100;
+}
+
+.warn-box, .dang-box {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    
+    
+
+}
+
+.badgee{
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 50%;
+}
+.namee{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 5px;
+   
+}
+.namee p{
+    color: black;
+}
+
+.warn-box {
+    border:2px solid yellow;
+    /* background-color: yellow; Color for the warning box */
+}
+
+.dang-box {
+    border:2px solid red; /* Color for the danger box */
+}
+/* h3{
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--main-text);
+} */
+.check{
+    height: 10px;
+    width: 10px;
+ }
+ .mapbox h6{
+    position: absolute;
+    left: 10px;  /* Distance from the top of the map */
+    bottom: 10px; /* Distance from the right of the map */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between the two boxes */
+    z-index: 100;
+    font-size: 13px;
+    color: black;
+ }
+.mapbox{
+    width: 100%;
+/* flex: 1; */
+height: 50%;
+position: relative;
+/* margin-bottom: 10px; */
+/* background-color: aqua; */
+}
+
+.stationSetting p{
+    color: var(--main-text);
+    margin-left: 10px;
+    /* padding-top: 10px; */
+    font-size: 14px;
+    font-weight: 100;
+}
+.parameterSetting p{
+    color: var(--main-text);
+    margin-left: 10px;
+    /* padding-top: 10px; */
+    font-size: 14px;
+    font-weight: 100;
+}
+button{
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    background-color: rgb(0, 255, 255);
+    color: black;
+    font-weight: 500;
+    border: none;
+    margin-top: 15px;
+    font-size: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.stationSetting select{
+    height: 40px;
+    width: 250px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--main-text);
+    border-width: 2px;
+    border-color: rgba(64, 62, 62, 0.678);
+    border-radius: 10px;
+    background-color: rgba(173, 172, 172, 0.409);
+}
+.parameterSetting select{
+    height: 40px;
+    width: 250px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--main-text);
+    border-width: 2px;
+    border-color: rgba(64, 62, 62, 0.678);
+    border-radius: 10px;
+    background-color: rgba(173, 172, 172, 0.409);
+}
+.mmmain{
+    overflow-y: auto;
+    display: flex;
+    width: 201%;
+    height: 30%;
+    flex-direction: row;
+}
+.righte{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: end;
+}
+#che0.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+#che1.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+#che2.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+#che3.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+#che4.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+#che5.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+#che6.check{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+.buttton{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.stationSetting input{
+    height: 40px;
+    width: 240px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding-left: 10px;
+    border: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--main-text);
+    border-width: 2px;
+    border-color: rgba(103, 100, 100, 0.678);
+    border-radius: 10px;
+    background-color: rgba(173, 172, 172, 0.409);
+}
+@media(max-height:700px){
+    .stationSetting input{
+        height: 30px;
+    }
+    .stationSetting select{
+        height: 30px;
+    }
+}
+
+.parameterSetting input{
+    height: 40px;
+    width: 310px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border: 2px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--main-text);
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.678);
+    border-radius: 10px;
+    background-color: rgba(173, 172, 172, 0.409);
+}
+/* for sensor parameter*/
+.parameterSetting{
+    /* flex: 1; */
+    width: 50%;
+       height: 100%;
+       background-color:   var(--background-color);
+       margin: 5px;
+       padding: 20px;
+       border-radius: 15px;
+       display: flex;
+       align-items: baseline;
+       flex-direction: column;
+   }
+.title{
+    height: 40px;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: start;
+}
+@media (max-width:1230px){
+    .ddfff-input{
+        width: 60px !important;
+    }
+    .stationSetting input{
+        width: 198px;
+    }
+}
+.sensors{
+    height: 200px;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sensors h1{
+    color: rgba(255, 255, 255, 0.775);
+    font-size: 15px;
+    font-weight: 500;
+}
+h1{
+    color: rgba(255, 255, 255, 0.775);
+    font-size: 15px;
+    font-weight: 500;
+}
+.tide, .adcp, .battery{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: rgb(34, 35, 35);
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s color 0.3s;
+}
+.selectOption{
+    background-color: rgb(95, 146, 146);
+}
+
+svg{
+    height: 50px;
+    width: 50px;
+}
+.rep{
+    width: 80%;
+    flex: 1;
+    /* background-color: aqua; */
+    /* background-color: aqua; */
+}
+
+.unit{
+    height: 50px;
+    width: 250px;
+    /* background-color: blue; */
+    display: flex;
+    border-radius: 20px;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.locc{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    margin-bottom:26px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+
+}
+
+.meter, .knot, .cm{
+    height: 30px;
+    width: 40%;
+    background-color:#606060;
+    border-radius: 20px;
+    margin-right: 5px;
+    color: black;
+    display: flex;
+    box-shadow: 1px 1px 5px grey;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Make it clickable */
+    transition: background-color 0.3s, color 0.3s;
+}
+.selected {
+    background-color: var(--main-text);
+    color: var(--radio-selected-text);
+    height: 35px;
+    width: 41%;
+}
+.reppp{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 50%;
+    width: 100%;
+    justify-content: left;
+}
+.fielddd{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 50%;
+}
+h3{
+    margin-bottom: 10px;
+    color: var(--main-text);
+}
+
+::ng-deep .dropdown-list{
+    background: var(--background-color) !important;
+
+}
+::ng-deep .multiselect-item-checkbox{
+    color: var(--main-text) !important;
+}
+::ng-deep .multiselect-dropdown{
+    width: 160% !important;
+}
+
+
+
+
+
+
+
+
+/* 
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #aaa;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+  }
+  
+  .item {
+    padding: 5px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    cursor: move;
+  }
+  
+  .remove-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin-left: 5px;
+    cursor: pointer;
+  } */
+
+  /* .box{
+    height: 200px;
+    width: 190% !important;
+    background-color: #007bff;
+
+  }
+  .left{
+    width: 45%;
+    height: 100%;
+  } */
+  
+  
+
+  .edit_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .edit_title i{
+    font-size: 11px;
+    color: lightskyblue;
+
+
+  }
+  .inpu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .inpu select{
+    width: 80%;
+  }
+  .inpu i{
+    margin-bottom: 15px;
+  }
+  .edit_title input{
+    height: 15px;
+    width: 80%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 10px !important;
+
+  }

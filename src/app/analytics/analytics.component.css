@@ -1,0 +1,340 @@
+.analytics-container {
+  margin: 0;
+    padding-left: 98px;
+    display: flex; /* Flexbox for layout */
+    flex-direction: row; 
+}
+
+/* filter style  flex1*/
+.filterContainer{
+  background-color: var(--background-color);
+  border-radius: 20px;
+  /* margin: 0 2px; */
+  padding: 20px;
+  position: sticky; 
+  width: 22%;
+  top: 0; 
+  min-height: 100vh;
+  height: 100%;
+  overflow-y: auto;
+  }
+
+  @media (max-width: 1200px) {
+    .filterContainer {
+      min-width: 25%; /* Adjust width for smaller screens */
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .filterContainer {
+      min-width: 30%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .filterContainer {
+      min-width: 40%; /* Full width on mobile */
+      height: auto; /* Adjust height to content */
+    }
+  }
+
+
+  /* Main heading h5 */
+  .filterContainer h5{
+    color: var(--main-text);
+    /* padding-bottom: 10px; */
+  }
+
+  /* Svg sensor icon */
+   .sensors{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+   
+  }
+  .tide, .adcp{
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s color 0.3s;
+  }
+  svg{
+    height: 30px;
+    width: 30px;  
+  }
+  .sensors h1{
+    color: rgba(255, 255, 255, 0.775);
+    /* font-size: 16px; */
+    /* font-weight: 500; */
+  }  
+  .selectOption{
+    background-color: rgb(73, 104, 104);
+  }
+
+
+/* filter tide , filter ADCP */
+  .stations{
+    /* padding: 30px 20px 0px 20px;  */
+    /* height: 4px; */
+    /* width: 100%; */
+    color: var(--main-text);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stations h3{
+    /* font-size: 22px; */
+    /* font-weight: 400; */
+  }
+
+
+
+/* Stations Field */
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 8px;
+    width: 100%; */
+  }
+  
+  .field label {
+    margin-bottom: 2%;
+    /* font-size: 18px; */
+    color: var(--main-text);
+    padding-top: 6%;
+  }
+
+  ::ng-deep .dateDrop .p-dropdown {
+    height: 30px;
+    width: 100%;
+    /* margin-left: 10px; */
+    /* margin-top: 5px; */
+    margin-bottom: 5%;
+    /* font-size: 15px; */
+    /* font-weight: bold; */
+    align-items: center;
+    color: var(--drop-text);
+    border-width: 2px;
+    /* border-color: rgba(64, 62, 62, 0.678); */
+    border-radius: 10px;
+    background-color: rgba(103, 100, 100, 0.678);
+  }
+  
+  /* Additional targeting for dropdown icon and inner elements */
+  ::ng-deep .dateDrop .p-dropdown-label {
+    color: var(--drop-text);
+    padding-left: 10px;
+  }
+  
+  ::ng-deep .dateDrop .p-dropdown-panel {
+    border-width: 2px;
+    border-color: rgba(64, 62, 62, 0.678);
+    border-radius: 10px;
+  }
+  
+  ::ng-deep .dateDrop .p-dropdown-item {
+    font-size: 15px;
+    color: var(--drop-text);
+    font-weight: bold;
+    padding: 8px 10px;
+    background-color: rgba(103, 100, 100, 0.678); /* Option background */
+  }
+  
+  /* Hover effect for dropdown items */
+  ::ng-deep .dateDrop .p-dropdown-item:hover {
+    background-color: #fff; /* Highlighted option background */
+    color: black;
+  }
+  
+  ::ng-deep .dateDrop .p-dropdown-trigger {
+    color: white;
+  }
+  
+  
+  /* ::ng-deep .dateDrop .p-dropdown-trigger .pi {
+    color: white;
+  } */
+
+  .full-width{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 4%;
+  }
+
+  .full-width label{
+    margin-bottom: 2%;
+    /* font-size: 18px; */
+    color: var(--main-text);
+    /* margin-top: 6%; */
+    padding-top: 5%;
+  }
+
+  ::ng-deep .custom-calendar .p-inputtext  {
+    height: 30px;
+    width: 100%;
+    background-color:  rgba(103, 100, 100, 0.678); /* Adjust the color as needed */
+    border-radius: 10px;
+    color: #fff !important;
+    border: none;
+  }
+  
+  ::ng-deep .custom-calendar .p-inputtext:focus {
+    outline: none;
+    border-color: white;
+  }
+  
+  ::ng-deep .custom-calendar .p-datepicker-monthpicker .p-monthpicker-month {
+    width: 50px; 
+    height: 40px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* .plot{
+    margin-top: 10px;
+  } */
+
+/* check box */
+
+.check{
+   padding-top: 2%;
+   margin-bottom: 2%;
+}
+
+.checkbox-group {
+    display: flex; /* Align checkboxes in a row */
+    gap: 2px; 
+    align-items: center; 
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 18px; /* Increase checkbox size */
+    height: 18px; /* Increase checkbox size */
+    /* margin-right: 2px;  */
+  }
+/* check box */
+
+
+
+
+  
+
+  
+
+  .conttt{
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+
+  }
+  /* Flex-2: Charts Layout */
+  .chartsContainer {
+    /* flex: 8.2; */
+    width: 100%;
+    max-width: 98%;
+    height: auto; 
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--background-color);
+    color: var(--main-text);
+    border-radius: 20px;
+    margin: 0px 10px 0px 10px;
+    /* padding: 20px; */
+    min-height: 100vh;
+  }
+
+  @media (max-width: 1200px) {
+    .chartContainer {
+      min-width: 800px; /* Adjust width for smaller screens */
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .chartContainer {
+      min-width: 800px;
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .chartContainer {
+      min-width: 800px; /* Full width on mobile */
+      height: 100%; /* Adjust height to content */
+    }
+  }
+  
+  .chartContainer {
+    /* background-color: rgb(0, 0, 0); */
+    background-color: var(--secbackground-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin: 20px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex: 1; /* Allow each chart container to grow equally */
+    min-height: 400px; 
+  }
+
+  .chartContainer2 {
+    /* background-color: rgb(0, 0, 0); */
+    background-color: var(--secbackground-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin: 20px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+    min-height: 80vh; 
+  }
+
+  .m-s-text {
+    position: absolute;
+    top: 7px;
+    right: 40px;
+    color: var(--main-text);
+  }
+
+
+  
+
+
+
+  /*Common CSS  */
+  /* button */
+
+.submit{
+  height: 40px;
+  width: 100%;  
+  max-width: 130px;
+  border-radius: 15px;
+  background-color: rgb(0, 255, 255);
+  color: rgb(0, 0, 0);
+  margin: auto;
+  margin-top: 8%;
+}
+
+
+
+

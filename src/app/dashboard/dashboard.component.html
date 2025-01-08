@@ -1,0 +1,533 @@
+<div class="reportDiv">
+    <div class="section1">
+        <h4>Tide</h4>
+        <!-- <p style="color: white;">ROWE ADCP</p> -->
+        <div class="dataMain">
+
+            <div class="progress" role="progressbar" data-value="12">
+                <div class="progress-inner">
+                    <div class="progress-indicator"></div>
+                    <div class="progress-indicator"></div>
+                </div>
+                <span class="progress-label">
+                    <strong>{{tide}}</strong>
+                    <span>{{tide_unit}}</span>
+                </span>
+            </div>
+
+
+        </div>
+        <h4>Battery Level</h4>
+        <div class="dataMain">
+            @if(battery!=null){
+            <app-battery [batteryLevel]="battery"></app-battery>
+            }
+
+            <div class="texts">
+
+                <!-- <p>85 v</p> -->
+            </div>
+
+        </div>
+        <h4>Location</h4>
+        <div class="dataMain">
+            <div class="location">
+                <img src="../../assets/output-onlinegiftools (1).gif" alt="location">
+                <div class="texts">
+                    <h6><span>Lat : </span>{{lat}}</h6>
+                    <h6><span>Lon : </span>{{lang}}</h6>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <div class="section2">
+        <h4>Surface Current Speed</h4>
+        <div class="dataMainc">
+
+            <app-gauge gaugeId="gauge-1" [value]="s_current"></app-gauge>
+            <div class="expand">
+                <i class="fa-solid fa-expand" (click)="expandTap('expand')" *ngIf="!showExpand"></i>
+                <!--  -->
+            </div>
+        </div>
+        <h4>Mid Current Speed</h4>
+        <div class="dataMainc">
+
+            <app-gauge gaugeId="gauge-2" [value]="m_current!"></app-gauge>
+        </div>
+        <h4>Bottom Current Speed</h4>
+        <div class="dataMainc">
+
+            <app-gauge gaugeId="gauge-3" [value]="l_current"></app-gauge>
+        </div>
+    </div>
+    <div class="sectionMid">
+        <h4>Surface Current Direction</h4>
+        <div class="dataMain">
+            <div class="compp">
+                <div class="compass">
+                    <div class="compass-inner">
+                        <div class="north">N</div>
+                        <div class="NE">NE</div>
+                        <div class="east">E</div>
+                        <div class="SE">SE</div>
+                        <div class="west">W</div>
+                        <div class="SW">SW</div>
+                        <div class="south">S</div>
+                        <div class="NW">NW</div>
+                        <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                            <div class="arrow-up"></div>
+                            <div class="arrow-down"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>{{compassvalue1}}<span>° {{compval1}}</span></h3>
+        </div>
+        <h4>Mid Current Direction</h4>
+        <div class="dataMain">
+            <div class="compp">
+                <div class="compass">
+                    <div class="compass-inner">
+                        <div class="north">N</div>
+                        <div class="NE">NE</div>
+                        <div class="east">E</div>
+                        <div class="SE">SE</div>
+                        <div class="west">W</div>
+                        <div class="SW">SW</div>
+                        <div class="south">S</div>
+                        <div class="NW">NW</div>
+                        <div class="main-arrow " [style.transform]="'rotate(' + compassvalue2 + 'deg)'">
+                            <div class="arrow-up"></div>
+                            <div class="arrow-down"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h3>{{compassvalue2}}<span>° {{compval2}}</span></h3>
+        </div>
+        <h4>Bottom Current Direction</h4>
+        <div class="dataMain">
+            <div class="compp">
+                <div class="compass">
+                    <div class="compass-inner">
+                        <div class="north">N</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="NE">NE</div>
+                        <!-- <div class="tickkk2"></div> -->
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="east">E</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="SE">SE</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="west">W</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="SW">SW</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="south">S</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="NW">NW</div>
+                        <!-- <div class="tickkk"></div> -->
+                        <div class="main-arrow" [style.transform]="'rotate(' + compassvalue3 + 'deg)'">
+                            <div class="arrow-up"></div>
+                            <div class="arrow-down"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>{{compassvalue3}}<span>° {{compval3}}</span></h3>
+        </div>
+    </div>
+    <div class="section3" *ngIf="!showExpand">
+        <div class="tit">
+            <h3>Buoy Location</h3>
+            <h4><span>UTC - </span> {{utc }} || <span> IST - </span> {{time}}</h4>
+        </div>
+
+        <div class="mapbox">
+            <div id="leaflet-map" style="height: 100%; width: 100%;"></div>
+        </div>
+
+        <div class="sensor-health">
+            <app-health style="
+            height: 100%;
+        "></app-health>
+            <!-- <h3>Sensor Health</h3> -->
+
+            <!-- <div class="sens">
+                <div *ngFor="let sensor of sensorStatus" class="sensor-box"
+                    [ngStyle]="{'background-color': getColor(sensor.status)}">
+                    <img src="../../assets/{{sensor.file.toLowerCase().replace(' ', '-')}}.png" alt="{{sensor.name}}">
+                    <h4>{{sensor.name}}</h4>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- <app-homechart></app-homechart> -->
+    </div>
+    <div class="secion4" *ngIf="showExpand">
+        <i class="fa-solid fa-minimize" (click)="expandTap('close')"></i>
+        <div class="list_current" *ngIf="e_bin1_status">
+            <div class="one">
+                <h4>{{e_bin1_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-4" [value]="innerCurrent1"></app-gauge>
+
+                </div>
+            </div>
+            <div class="two">
+                <h4>{{e_bin1_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection1}}<span>° {{inCompval1}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="list_current" *ngIf="e_bin2_status">
+            <div class="one">
+                <h4>{{e_bin2_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-5" [value]="innerCurrent2"></app-gauge>
+
+                </div>
+            </div>
+            <div class="two">
+                <h4>{{e_bin2_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection2}}<span>° {{inCompval2}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="list_current" *ngIf="e_bin3_status">
+            <div class="one">
+                <h4>{{e_bin3_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-6" [value]="innerCurrent3"></app-gauge>
+
+                </div>
+            </div>
+
+            <div class="two">
+                <h4>{{e_bin3_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection3}}<span>° {{inCompval3}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="list_current" *ngIf="e_bin4_status">
+            <div class="one">
+                <h4>{{e_bin4_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-7" [value]="innerCurrent4"></app-gauge>
+
+                </div>
+            </div>
+
+            <div class="two">
+                <h4>{{e_bin4_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection4}}<span>° {{inCompval4}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="list_current" *ngIf="e_bin5_status">
+            <div class="one">
+                <h4>{{e_bin5_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-8" [value]="innerCurrent5"></app-gauge>
+
+                </div>
+            </div>
+            <div class="two">
+                <h4>{{e_bin5_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection5}}<span>° {{inCompval5}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="list_current" *ngIf="e_bin6_status">
+            <div class="one">
+                <h4>{{e_bin6_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-9" [value]="innerCurrent6"></app-gauge>
+
+                </div>
+            </div>
+
+            <div class="two">
+                <h4>{{e_bin6_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection6}}<span>° {{inCompval6}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="list_current" *ngIf="e_bin7_status">
+            <div class="one">
+                <h4>{{e_bin7_name}} Current Speed</h4>
+                <div class="dataMaind">
+
+                    <app-gauge gaugeId="gauge-10" [value]="innerCurrent7"></app-gauge>
+
+                </div>
+            </div>
+            <div class="two">
+                <h4>{{e_bin7_name}} Current Direction</h4>
+                <div class="dataMaind">
+                    <div class="compp">
+                        <div class="compass">
+                            <div class="compass-inner">
+                                <div class="north">N</div>
+                                <div class="NE">NE</div>
+                                <div class="east">E</div>
+                                <div class="SE">SE</div>
+                                <div class="west">W</div>
+                                <div class="SW">SW</div>
+                                <div class="south">S</div>
+                                <div class="NW">NW</div>
+                                <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                    <div class="arrow-up"></div>
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>{{innerdirection7}}<span>° {{inCompval7}}</span></h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="Mmain">
+        <div class="sec-two-three">
+            <div class="section2">
+                <div class="battery">
+                    <app-battery></app-battery>
+                    <div class="texts">
+                        <h6>Battery Level</h6>
+                        <p>70%</p>
+                    </div>
+                </div>
+                <div class="location">
+                    <img src="../../assets/output-onlinegiftools (1).gif" alt="location">
+                    <div class="texts">
+                        <h6><span>Lat : </span>13.8923789</h6>
+                        <h6><span>Lang : </span>15.8376482</h6>
+
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="section3">
+
+                <div class="mapbox">
+                    <div id="ol-map" class="map-container"></div>
+                </div>
+            </div>
+        </div>
+        <div class="chart">
+            <app-homechart></app-homechart>
+        </div>
+    </div> -->
+    <!-- <div class="expanded_sheet">
+        <i class="fa-solid fa-minimize" (click)="expandTap('close')"></i>
+        <div class="sectionMid">
+            <h4>Surface Current Direction</h4>
+            <div class="dataMain">
+                <div class="compp">
+                    <div class="compass">
+                        <div class="compass-inner">
+                            <div class="north">N</div>
+                            <div class="NE">NE</div>
+                            <div class="east">E</div>
+                            <div class="SE">SE</div>
+                            <div class="west">W</div>
+                            <div class="SW">SW</div>
+                            <div class="south">S</div>
+                            <div class="NW">NW</div>
+                            <div class="main-arrow" [style.transform]="'rotate(' + compassvalue1 + 'deg)'">
+                                <div class="arrow-up"></div>
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>{{compassvalue1}}<span>° {{compval1}}</span></h3>
+            </div>
+            <h4>Mid Current Direction</h4>
+            <div class="dataMain">
+                <div class="compp">
+                    <div class="compass">
+                        <div class="compass-inner">
+                            <div class="north">N</div>
+                            <div class="NE">NE</div>
+                            <div class="east">E</div>
+                            <div class="SE">SE</div>
+                            <div class="west">W</div>
+                            <div class="SW">SW</div>
+                            <div class="south">S</div>
+                            <div class="NW">NW</div>
+                            <div class="main-arrow " [style.transform]="'rotate(' + compassvalue2 + 'deg)'">
+                                <div class="arrow-up"></div>
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <h3>{{compassvalue2}}<span>° {{compval2}}</span></h3>
+            </div>
+            <h4>Bottom Current Direction</h4>
+            <div class="dataMain">
+                <div class="compp">
+                    <div class="compass">
+                        <div class="compass-inner">
+                            <div class="north">N</div>
+                           
+                            <div class="NE">NE</div>
+                          
+                            <div class="east">E</div>
+                          
+                            <div class="SE">SE</div>
+                            
+                            <div class="west">W</div>
+                        
+                            <div class="SW">SW</div>
+                        
+                            <div class="south">S</div>
+                          
+                            <div class="NW">NW</div>
+                        
+                            <div class="main-arrow" [style.transform]="'rotate(' + compassvalue3 + 'deg)'">
+                                <div class="arrow-up"></div>
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>{{compassvalue3}}<span>° {{compval3}}</span></h3>
+            </div>
+        </div>
+    </div> -->
+
+</div>
