@@ -59,7 +59,147 @@ export class HomeComponent implements OnInit {
   imageMarker1!:string;
   imageMarker2!:string;
 
+dummyData1:SensorData[]=[
+  {
+    "Battery_Voltage": "12.4",
+    "Date": "2025-01-08T00:00:00.000Z",
+    "GPS_Date": "1970-01-01T00:00:00.000Z",
+    "LAT": 12.90935942,
+    "LONG": 77.59784407,
+    "Lower_CurrentSpeedDirection": "0.32;254.7",
+    "Middle_CurrentSpeedDirection": "0.71;249.3",
+    "S1_RelativeWaterLevel": 2.37,
+    "S2_SurfaceCurrentSpeedDirection":"0.69;221.6",
+    "StationID":"CWPRS01",
+    "Time":"1970-01-01T09:30:00.000Z",
+    "UTC_Time":"1970-01-01T06:00:00.000Z",
+    // "dateTime": "2025-01-08T05:06:54.943Z",
+    "id":103,
+    "profile4": "23.4;233.9",
+    "profile5": "53.2;234.9",
+    "profile6": "21.3;321.9",
+    "profile7": "43.2;233.0",
+    "profile8": "11.3;343.2",
+    "profile9": "32.2;244.3",
+    "profile10": "12.3;123.3"
+  },
+  {
+    "Battery_Voltage": "12.4",
+    "Date": "2025-01-08T00:00:00.000Z",
+    "GPS_Date": "1970-01-01T00:00:00.000Z",
+    "LAT": 12.90935942,
+    "LONG": 77.59784407,
+    "Lower_CurrentSpeedDirection": "0.32;254.7",
+    "Middle_CurrentSpeedDirection": "0.71;249.3",
+    "S1_RelativeWaterLevel": 2.37,
+    "S2_SurfaceCurrentSpeedDirection":"0.69;221.6",
+    "StationID":"CWPRS01",
+    "Time":"1970-01-01T09:20:00.000Z",
+    "UTC_Time":"1970-01-01T06:00:00.000Z",
+    // "dateTime": "2025-01-08T05:06:54.943Z",
+    "id":102,
+    "profile4": "23.4;233.9",
+    "profile5": "53.2;234.9",
+    "profile6": "21.3;321.9",
+    "profile7": "43.2;233.0",
+    "profile8": "11.3;343.2",
+    "profile9": "32.2;244.3",
+    "profile10": "12.3;123.3"
+  },
+  {
+    "Battery_Voltage": "12.4",
+    "Date": "2025-01-08T00:00:00.000Z",
+    "GPS_Date": "1970-01-01T00:00:00.000Z",
+    "LAT": 12.90935942,
+    "LONG": 77.59784407,
+    "Lower_CurrentSpeedDirection": "0.32;254.7",
+    "Middle_CurrentSpeedDirection": "0.71;249.3",
+    "S1_RelativeWaterLevel": 2.37,
+    "S2_SurfaceCurrentSpeedDirection":"0.69;221.6",
+    "StationID":"CWPRS01",
+    "Time":"1970-01-01T09:10:00.000Z",
+    "UTC_Time":"1970-01-01T06:00:00.000Z",
+    // "dateTime": "2025-01-08T05:06:54.943Z",
+    "id":101,
+    "profile4": "23.4;233.9",
+    "profile5": "53.2;234.9",
+    "profile6": "21.3;321.9",
+    "profile7": "43.2;233.0",
+    "profile8": "11.3;343.2",
+    "profile9": "32.2;244.3",
+    "profile10": "12.3;123.3"
+  }
+]
 
+
+dummyData2:SensorData2[]=[
+{
+  "Battery_Voltage": "12.4",
+  "Date":"2025-01-08T00:00:00.000Z",
+  "GPS_Date":"1900-01-01T00:00:00.000Z",
+  "LAT": 18.994803,
+  "LONG": 72.80921,
+  "Lower_CurrentSpeedDirection": "0.32;254.7",
+  "Middle_CurrentSpeedDirection": "0.71;249.3",
+  "S1_RelativeWaterLevel":2.37,
+  "S2_SurfaceCurrentSpeedDirection": "0.69;221.6",
+  "StationID":"CWPRS02",
+  "Time": "1970-01-01T09:30:00.000Z",
+  "UTC_Time": "1970-01-01T06:00:00.000Z",
+  "id": 63,
+  "profile4": "23.4;233.9",
+  "profile5": "53.2;234.9",
+  "profile6": "21.3;321.9",
+  "profile7": "43.2;233.0",
+  "profile8": "11.3;343.2",
+  "profile9": "32.2;244.3",
+  "profile10":"12.3;123.3"
+},
+{
+  "Battery_Voltage": "12.4",
+  "Date":"2025-01-08T00:00:00.000Z",
+  "GPS_Date":"1900-01-01T00:00:00.000Z",
+  "LAT": 18.994803,
+  "LONG": 72.80921,
+  "Lower_CurrentSpeedDirection": "0.32;254.7",
+  "Middle_CurrentSpeedDirection": "0.71;249.3",
+  "S1_RelativeWaterLevel":2.37,
+  "S2_SurfaceCurrentSpeedDirection": "0.69;221.6",
+  "StationID":"CWPRS02",
+  "Time": "1970-01-01T09:20:00.000Z",
+  "UTC_Time": "1970-01-01T06:00:00.000Z",
+  "id": 62,
+  "profile4": "23.4;233.9",
+  "profile5": "53.2;234.9",
+  "profile6": "21.3;321.9",
+  "profile7": "43.2;233.0",
+  "profile8": "11.3;343.2",
+  "profile9": "32.2;244.3",
+  "profile10":"12.3;123.3"
+},
+{
+  "Battery_Voltage": "12.4",
+  "Date":"2025-01-08T00:00:00.000Z",
+  "GPS_Date":"1900-01-01T00:00:00.000Z",
+  "LAT": 18.994803,
+  "LONG": 72.80921,
+  "Lower_CurrentSpeedDirection": "0.32;254.7",
+  "Middle_CurrentSpeedDirection": "0.71;249.3",
+  "S1_RelativeWaterLevel":2.37,
+  "S2_SurfaceCurrentSpeedDirection": "0.69;221.6",
+  "StationID":"CWPRS02",
+  "Time": "1970-01-01T09:10:00.000Z",
+  "UTC_Time": "1970-01-01T06:00:00.000Z",
+  "id": 61,
+  "profile4": "23.4;233.9",
+  "profile5": "53.2;234.9",
+  "profile6": "21.3;321.9",
+  "profile7": "43.2;233.0",
+  "profile8": "11.3;343.2",
+  "profile9": "32.2;244.3",
+  "profile10":"12.3;123.3"
+}
+]
  
   mapUrl = 'http://mt{0-3}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
 mapChange(name:String){
@@ -117,10 +257,17 @@ ngOnInit(): void {
       this.data.getSensorLiveData(todayDate, todayDate),
       this.data.getStationNames()
     ]).subscribe(([sensors, configs]) => {
-       this.sensorsliveData = sensors.buoy1;
-       console.log("bin4:", this.sensorsliveData[0].profile4);
-      this.sensorsliveData2 = sensors.buoy2;
-  console.log("sensor Data",this.sensorsliveData);
+      if(sensors.buoy1.length !== 4){
+        console.log("yes its low data");
+        this.sensorsliveData =this.dummyData1;
+        this.sensorsliveData2 = this.dummyData2;
+      }else{
+        this.sensorsliveData = sensors.buoy1;
+       
+       this.sensorsliveData2 = sensors.buoy2;
+      }
+      console.log("bin4:", this.sensorsliveData);
+  console.log("sensor Data",this.sensorsliveData2);
       this.livelocationbuoy1 = fromLonLat([this.sensorsliveData[0].LONG, this.sensorsliveData[0].LAT]) as [number, number];
       this.livelocationbuoy2 = fromLonLat([this.sensorsliveData2[0].LONG, this.sensorsliveData2[0].LAT]) as [number, number];
       // this.buoy2 = fromLonLat([configs[1].longitude_dd ,configs[1].latitude_dd]) as [number, number];
